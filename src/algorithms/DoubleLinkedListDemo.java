@@ -1,10 +1,7 @@
 package algorithms;
 
-public class doubleLinkedList {
+public class DoubleLinkedListDemo {
     public static void main(String[] args) {
-        // Membuat objek DoubleLinkedList
-        DoubleLinkedList studentList = new DoubleLinkedList();
-        
         // Menjalankan demo StudentList
         StudentList.demoStudentList();
     }
@@ -195,4 +192,3 @@ class StudentList {
         studentList.printForward();
     }
 }
-

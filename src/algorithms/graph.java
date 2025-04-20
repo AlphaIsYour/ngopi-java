@@ -1,10 +1,6 @@
 package algorithms;
 
 import java.util.*;
-
-/**
- * Implementasi Graph untuk manajemen rute penerbangan antar kota
- */
 public class graph  {
     static class Graph {
         private int numVertices;

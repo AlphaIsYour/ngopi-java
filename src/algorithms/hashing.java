@@ -1,10 +1,6 @@
 package algorithms;
 
 import java.util.*;
-
-/**
- * Implementasi HashTable dengan Chaining untuk mengelola inventaris toko
- */
 public class hashing {
     static class HashTable {
         private ArrayList<LinkedList<Integer>> bucketArray;

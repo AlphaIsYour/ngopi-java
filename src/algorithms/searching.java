@@ -2,9 +2,6 @@ package algorithms;
 
 import java.util.Arrays;
 
-/**
- * Implementasi Linear Search dan Binary Search untuk mencari nama dalam array
- */
 public class searching {
     static class LinearSearch {
         int search(String arr[], String x) {
@@ -13,7 +10,7 @@ public class searching {
                     return i;
                 }
             }
-            return -1; // Elemen tidak ditemukan
+            return -1; 
         }
     }
     
@@ -31,7 +28,7 @@ public class searching {
                 }
                 return search(arr, mid + 1, right, x);
             }
-            return -1; // Elemen tidak ditemukan
+            return -1; 
         }
     }
     
@@ -59,7 +56,7 @@ public class searching {
             }
         }, "Linear Search");
         
-        Arrays.sort(names); // Binary search membutuhkan array terurut
+        Arrays.sort(names);
         BinarySearch binarySearch = new BinarySearch();
         measureExecutionTime(() -> {
             int result = binarySearch.search(names, 0, names.length - 1, searchName);

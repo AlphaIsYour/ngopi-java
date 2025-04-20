@@ -9,7 +9,7 @@ public class hashing {
 
         public HashTable() {
             bucketArray = new ArrayList<>();
-            numBuckets = 10; // Inisial kapasitas
+            numBuckets = 10;
             size = 0;
             for (int i = 0; i < numBuckets; i++) {
                 bucketArray.add(new LinkedList<>());

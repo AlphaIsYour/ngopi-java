@@ -6,7 +6,6 @@ public class circularLinkedList {
     }
 }
 
-// Kelas Node untuk menyimpan data tugas
 class Node {
     String data;
     Node next;
@@ -17,7 +16,6 @@ class Node {
     }
 }
 
-// Implementasi Circular Linked List
 class CircularLinkedList {
     private Node head;
     private Node tail;

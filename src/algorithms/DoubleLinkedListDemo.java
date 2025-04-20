@@ -2,16 +2,14 @@ package algorithms;
 
 public class DoubleLinkedListDemo {
     public static void main(String[] args) {
-        // Menjalankan demo StudentList
         StudentList.demoStudentList();
     }
 }
 
-// Kelas Node untuk menyimpan data siswa
 class Node {
-    String data; // Data yang disimpan di node (nama siswa)
-    Node next;   // Referensi ke node berikutnya
-    Node prev;   // Referensi ke node sebelumnya
+    String data; 
+    Node next; 
+    Node prev;  
     
     public Node(String data) {
         this.data = data;
@@ -20,18 +18,15 @@ class Node {
     }
 }
 
-// Implementasi Double Linked List
 class DoubleLinkedList {
-    private Node head; // Kepala list, mengarah ke node pertama
-    private Node tail; // Ekor list, mengarah ke node terakhir
+    private Node head; 
+    private Node tail; 
     
-    // Konstruktor
     public DoubleLinkedList() {
         this.head = null;
         this.tail = null;
     }
     
-    // Menambahkan node di awal list
     public void addFirst(String data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -43,7 +38,6 @@ class DoubleLinkedList {
         }
     }
     
-    // Menambahkan node di akhir list
     public void addLast(String data) {
         Node newNode = new Node(data);
         if (tail == null) {
@@ -55,16 +49,14 @@ class DoubleLinkedList {
         }
     }
     
-    // Menghapus node berdasarkan nama siswa
     public boolean removeByName(String name) {
         if (head == null) {
             System.out.println("List kosong, tidak ada siswa yang bisa dihapus.");
             return false;
         }
         
-        // Jika node yang akan dihapus adalah head
         if (head.data.equals(name)) {
-            if (head == tail) { // Hanya ada satu node
+            if (head == tail) { 
                 head = tail = null;
             } else {
                 head = head.next;
@@ -74,7 +66,6 @@ class DoubleLinkedList {
             return true;
         }
         
-        // Jika node yang akan dihapus adalah tail
         if (tail.data.equals(name)) {
             tail = tail.prev;
             tail.next = null;
@@ -82,13 +73,11 @@ class DoubleLinkedList {
             return true;
         }
         
-        // Mencari node yang akan dihapus
         Node current = head.next;
         while (current != null && !current.data.equals(name)) {
             current = current.next;
         }
         
-        // Jika node ditemukan
         if (current != null) {
             if (current.next != null) {
                 current.next.prev = current.prev;
@@ -102,7 +91,6 @@ class DoubleLinkedList {
         return false;
     }
     
-    // Menampilkan semua elemen dari depan ke belakang
     public void printForward() {
         System.out.println("\n===============================");
         if (head == null) {
@@ -123,7 +111,6 @@ class DoubleLinkedList {
         System.out.println("===============================");
     }
     
-    // Menampilkan semua elemen dari belakang ke depan
     public void printBackward() {
         System.out.println("\n===============================");
         if (tail == null) {
@@ -145,12 +132,10 @@ class DoubleLinkedList {
     }
 }
 
-// Kelas untuk demo penggunaan DoubleLinkedList
 class StudentList {
     public static void demoStudentList() {
         DoubleLinkedList studentList = new DoubleLinkedList();
         
-        // Menambahkan beberapa siswa
         studentList.addLast("Ahmad");
         studentList.addLast("Budi");
         studentList.addLast("Chika");
@@ -163,7 +148,6 @@ class StudentList {
         System.out.println("\nDaftar Siswa (belakang ke depan):");
         studentList.printBackward();
         
-        // Menghapus siswa "Budi"
         System.out.println("\nMenghapus siswa 'Budi'...");
         studentList.removeByName("Budi");
         
@@ -173,18 +157,15 @@ class StudentList {
         System.out.println("\nDaftar Siswa setelah penghapusan (belakang ke depan):");
         studentList.printBackward();
         
-        // Menambahkan siswa baru di awal list
         System.out.println("\nMenambahkan siswa 'Zainal' di awal list...");
         studentList.addFirst("Zainal");
         
         System.out.println("\nDaftar Siswa setelah penambahan di awal (depan ke belakang):");
         studentList.printForward();
         
-        // Menghapus siswa di awal list
         System.out.println("\nMenghapus siswa pertama 'Zainal'...");
         studentList.removeByName("Zainal");
         
-        // Menghapus siswa di akhir list
         System.out.println("\nMenghapus siswa terakhir 'Eka'...");
         studentList.removeByName("Eka");
         

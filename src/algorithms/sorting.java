@@ -1,10 +1,6 @@
 package algorithms;
 
 import java.util.Arrays;
-
-/**
- * Implementasi Bubble Sort dan Insertion Sort untuk mengurutkan nilai siswa
- */
 public class sorting {
     static class BubbleSort {
         void sort(int arr[]) {
@@ -43,7 +39,7 @@ public class sorting {
     static long measureExecutionTime(Runnable sortingAlgorithm) {
         long startTime = System.nanoTime();
         sortingAlgorithm.run();
-        return (System.nanoTime() - startTime) / 1000; // Convert to microseconds
+        return (System.nanoTime() - startTime) / 1000; 
     }
     
     static boolean isSorted(int[] arr) {
